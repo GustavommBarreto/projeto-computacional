@@ -1,0 +1,72 @@
+
+#include <iomanip>
+#include <iostream>
+#include <cstdlib>
+#include <cstring>
+
+
+using namespace std; 
+
+	int N[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+
+	char L[52] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+   
+	char C[17] = { '_', '.', '-', '$', '%', '/', '&', '(', ')', '[', ']', '?', '!', '@', '=', '+', '*' };
+
+int main()
+{
+
+	
+   int quantidade;
+   
+   int opc;
+   
+   int op1;
+   
+   int to1 = 1;
+  
+   int to2 = 2;  
+  
+   int to3 = 3;
+  
+   int to4 = 4;
+   
+
+cout<<"Escolha uma opcao:"<<endl;
+cout<<"[1] Senha aleatoria"<<endl;
+
+cout<<"[2] Numero de matricula"<<endl;
+
+cout<<"[3] Email aleatorio para cadastro"<<endl;
+
+cout<<"[4]Sair"<<endl;
+
+
+cin >> opc;
+
+   if(opc == 1){
+   	cout<<"Escolha uma opcao"<<endl;
+      cout<<"[1]Senha com numeros"<<endl;
+      cout<<"[2]Senha com letras"<<endl;
+      cout<<"[3]Senha com Letras e numeros"<<endl;
+      cout<<"[4]Senha com letras, numeros e caracteres especiais"<<endl;
+      cin>>op1;
+    
+    if(op1 == 1){
+    cout <<"Quantidade de numeros"<< endl;
+    cin>>quantidade;
+	
+	for(int n = 0;n<quantidade;n++){
+	cout<< N[RAND_MAX];}
+}
+}
+	  
+	  
+	  
+	
+      
+      
+   
+   return(0);
+   }
+
