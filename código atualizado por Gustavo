@@ -1,0 +1,80 @@
+#include <iomanip>
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+    char C[17] = { '_', '.', '-', '$', '%', '/', '&', '(', ')', '[', ']', '?', '!', '@', '=', '+', '*' };
+
+	char L[52] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+   
+	const char N[] = "0123456789";
+	
+	const char LN[] =  "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	
+	const char LNC[] = "0123456789!@#$%^&*abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+void imprime_senha(const char vet[], int tamanhovet){
+	int i;
+	int n;
+	int quantidade;
+	cout << "Quantidade de caracteres" << endl;
+	cin >> quantidade;
+	
+	for(int n = 0; n<quantidade; n++){
+		cout << vet[rand()%tamanhovet];
+	}
+}
+int main()
+{
+
+	
+   int quantidade;
+   
+   int a,b,c = 1,d= 2,e = 3,f = 4;
+   
+
+cout<<"Escolha uma opcao:"<<endl;
+cout<<"[1] Senha aleatoria"<<endl;
+
+cout<<"[2] Numero de matricula"<<endl;
+
+cout<<"[3] Email aleatorio para cadastro"<<endl;
+
+cout<<"[4]Sair"<<endl;
+
+
+cin >> a;
+
+   if(a == 1){
+   	cout<<"Escolha uma opcao"<<endl;
+      cout<<"[1]Senha com numeros"<<endl;
+      cout<<"[2]Senha com letras"<<endl;
+      cout<<"[3]Senha com Letras e numeros"<<endl;
+      cout<<"[4]Senha com letras, numeros e caracteres especiais"<<endl;
+      cin>>b;
+    
+if(b == 1){//senha apenas com numeros
+    imprime_senha(N , 10);
+}
+
+else if (b == 2) {//senha apenas com letras
+	imprime_senha(L , 52);
+}
+
+else if (b == 3) {//senha com apenas letras e numeros
+	imprime_senha(LN , 62);
+}
+else if (b == 4){//senha com todas as opcoes
+	imprime_senha(LNC , 79);
+}
+} 
+if(a == 2){
+	
+}
+
+
+
+
+ 
+return 0;
+   }
