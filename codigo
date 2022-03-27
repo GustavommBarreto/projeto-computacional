@@ -42,7 +42,7 @@ cin >> a;
       cout<<"[2]Senha com letras"<<endl;
       cout<<"[3]Senha com Letras e numeros"<<endl;
       cout<<"[4]Senha com letras, numeros e caracteres especiais"<<endl;
-      cin>>op1;
+      cin>>b;
     
     if(b == 1){
     cout <<"Quantidade de numeros"<< endl;
