@@ -2,72 +2,191 @@
 
 
 
-#include <iomanip>
+
+	
+      
+      
+   
+ #include <iomanip>
 #include <iostream>
 #include <cstdlib>
-
-
-
-using namespace std; 
+#include <time.h>
+#define MAX 100
+using namespace std;
 
 	char C[17] = { '_', '.', '-', '$', '%', '/', '&', '(', ')', '[', ']', '?', '!', '@', '=', '+', '*' };
 
 	char L[52] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
    
-	int N[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
-int main()
-{
-
+	const char N[] = "0123456789";
 	
-   int quantidade;
-   
-   int a,b,c = 1,d= 2,e = 3,f = 4;
-   
-
-cout<<"Escolha uma opcao:"<<endl;
-cout<<"[1] Senha aleatoria"<<endl;
-
-cout<<"[2] Numero de matricula"<<endl;
-
-cout<<"[3] Email aleatorio para cadastro"<<endl;
-
-cout<<"[4]Sair"<<endl;
-
-
-cin >> a;
-
-   if(a == 1){
-   	cout<<"Escolha uma opcao"<<endl;
-      cout<<"[1]Senha com numeros"<<endl;
-      cout<<"[2]Senha com letras"<<endl;
-      cout<<"[3]Senha com Letras e numeros"<<endl;
-      cout<<"[4]Senha com letras, numeros e caracteres especiais"<<endl;
-      cin>>b;
+	const char LN[] =  "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	
+	const char LNC[] = "0123456789!@#$%^&*abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	
+struct matricula{
+    char* nome;
+    int idade;
+    int Numero[10];
+    char email[79];
+    int senha [79];
+    char curso;
+    int nascimento;
+    }matricula[MAX];
     
-    if(b == 1){
-    cout <<"Quantidade de numeros"<< endl;
-    cin>>quantidade;
-	
-	for(int n = 0;n<quantidade;n++){
-	cout<< N[rand()%10];}
-}
-    
+    void Menu(){
+   cout<<"Selecione uma opcao:";
+    cout<<"[1] Novo(a) aluno(a)"<<endl;
+    cout<<"[2] Listar alunos(as)"<<endl;
+    cout<<"[3] Pesquisar aluno(a)"<<endl;
+    cout<<"[4] Alterar dados"<<endl;
+
+     
+     }
 
 
+void cadastroAluno(int info){
+ 
+    cout<<"Nome:"<<endl;
+    cin>>matricula[info].nome;
 
-
-
-
-
-
-}
-	  
-	  
-	  
-	
-      
-      
+    cout<<"Idade:"<<endl;
+   cin>>matricula[info].idade;
    
-   return(0);
-   }
+   cout<<"Numero de telefone:"<<endl;
+   cin>>matricula[info].Numero[10];
+   
+   cout<<"Data de Nascimento:"<<endl;
+   cin>>matricula[info].nascimento;
+   
+   cout<<"Curso:"<<endl;
+   cin>>matricula[info].curso;
+
+   cout<<"Email:"<<endl;
+   cin>>matricula[info].email[79];
+}
+
+void listarAlunos(int quantidade){
+	int i; 
+    int contagem = 1;
+    for(i = 0; i < quantidade; i++){
+        cout<<"Alunos:"<<contagem++<<endl;
+        cout<<"Nome:"<< matricula[i].nome<<endl;
+        cout<<"Idade:"<< matricula[i].idade<<endl;
+        cout<<"Numero de telefone:"<<matricula[i].Numero<<endl;
+        cout<<"Data de Nascimento"<<matricula[i].nascimento<<endl;
+        cout<<"Curso:"<<matricula[i].curso<<endl;
+        cout<<"Email:" << matricula[i].email<<endl;
+    }
+}
+
+void exibirAluno(int indice){
+        
+        cout<<"Nome:"<< matricula[indice].nome<<endl;
+        cout<<"Idade:"<< matricula[indice].idade<<endl;
+        cout<<"Numero de telefone:"<<matricula[indice].Numero<<endl;
+        cout<<"Data de Nascimento"<<matricula[indice].nascimento<<endl;
+        cout<<"Curso:"<<matricula[indice].curso<<endl;
+        cout<<"Email:" << matricula[indice].email<<endl;
+}
+   
+   int pesquisarAluno(int quantidade, char nome){
+    int i;
+
+    for(i = 0; i < quantidade; i++){
+        if(matricula[i].nome == 0)
+            return i;
+    }
+    return -1;
+}
+   
+   void atualizarDados(int indice){
+    
+    char nome;
+    int idade;
+    int Numero[10];
+    char email[79];
+    int senha [MAX];
+    char curso;
+    int nascimento;
+    
+    cout<<"Nome:"<<endl;
+    cin>>matricula[indice].nome;
+
+    cout<<"Idade:"<<endl;
+    cin>>matricula[indice].idade;
+    
+     cout<<"Numero de telefone:"<<endl;
+    cin>>matricula[indice].Numero[10];
+    
+     cout<<"Data de nascimento:"<<endl;
+    cin>>matricula[indice].nascimento;
+    
+     cout<<"Curso:"<<endl;
+    cin>>matricula[indice].curso;
+    
+     cout<<"Email:"<<endl;
+    cin>>matricula[indice].email[79];
+}
+
+   int leitor(){
+    int opcao;
+
+    cout<<"Opcao esolhida:"<<endl;
+    cin>>opcao;
+
+    return opcao;
+}
+
+	
+	
+	
+int main(){
+    char nome[MAX];
+    int registro = 0;
+    int opcao;
+    int indice;
+
+    do{
+           Menu();
+        opcao = leitor();
+
+        switch(opcao){
+            case 1:
+                cadastroAluno(registro++);
+                break;
+            case 2:
+                listarAlunos(registro);
+                break;
+            case 3:
+                cout<<"nome"<<endl;
+                cin >> nome;
+                indice = pesquisarAluno(registro, *nome);
+
+                if(indice >= 0 && indice <= 99)
+                exibirAluno(indice);
+                else
+                   cout<<"aluno nao matriculado";
+                break;
+            case 4:
+               cout<<"Aluno numero:";
+                cin>>indice;
+                indice -= 1;
+                if(indice >= 0 && indice <= 99)
+                    atualizarDados(indice);
+                else
+                    cout<<"matricula invalida";
+                break;
+            case 99:
+                cout<<"sair";
+                break;
+            default:
+                cout<<"opcao invalida";
+                Menu();
+                opcao = leitor();
+        }
+
+    }while(opcao != 99);
+}
+
 
