@@ -25,17 +25,17 @@ using namespace std;
 	const char LNC[] = "0123456789!@#$%^&*abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	
 struct matricula{
-    char* nome;
+    char nome[100];
     int idade;
     int Numero[10];
     char email[79];
     int senha [79];
-    char curso;
+    char curso[100];
     int nascimento;
     }matricula[MAX];
     
     void Menu(){
-   cout<<"Selecione uma opcao:";
+   cout<<"Selecione uma opcao:" << endl;
     cout<<"[1] Novo(a) aluno(a)"<<endl;
     cout<<"[2] Listar alunos(as)"<<endl;
     cout<<"[3] Pesquisar aluno(a)"<<endl;
@@ -188,5 +188,4 @@ int main(){
 
     }while(opcao != 99);
 }
-
 
